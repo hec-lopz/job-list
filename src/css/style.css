@@ -1,0 +1,174 @@
+:root{
+  /**************\
+  *   Widths
+  \*************/
+  --mobile-width: 375px;
+  --desktop-width: 1440px;
+
+  /**************\
+  *   Fonts
+  \*************/
+  --main-font: 'Spartan', sans-serif;
+    /************* weights */
+  --normal-weight: 500;
+  --bold-weight: 700;
+
+  /**************\
+  *   Colors
+  \*************/
+    /************ Primary */
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+
+    /************ Neutral */
+  --bg-color: hsl(180, 52%, 96%);
+  --light-grayish-cyan: hsl(180, 31%, 95%);
+  --dark-grayish-cyan: hsl(180, 8%, 52%);
+  --very-dark-grayish-cyan: hsl(180, 14%, 20%);
+
+}
+html{
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*, *::after, *::before{
+  box-sizing: inherit;
+}
+body, figure, a{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-family: var(--main-font);
+  padding-top: 50px;
+  background-color: var(--bg-color);
+}
+.container{
+  min-width: 320px;
+  width: 85%;
+  margin: 0 auto;
+  /* padding: 20px; */
+}
+.card{
+  /* min-width: 320px; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 30px 15px 15px;
+  border-left: 5px solid var(--desaturated-dark-cyan);
+  border-radius: 5px;
+  background-color: white;
+  position: relative;
+}
+.card__header{
+  position: relative;
+}
+.card__body{
+  display: flex;
+  align-items: center;
+}
+
+.card__company-thumb{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 0;
+  padding: 0;
+  top: -25px
+  /* transform: translateY(-25px); */
+}
+.card__company-thumb > img{
+  width: 100%;
+  object-fit: contain;
+}
+.card__company-name{
+  color: var(--desaturated-dark-cyan);
+  font-size: 1.3rem;
+  font-weight: var(--bold-weight);
+}
+.card__company-name + .card__featured{
+  margin-left: 2rem;
+}
+
+.card__featured{
+  border-radius: 5rem;
+  padding: .6rem 1rem;
+  margin: .5rem;
+  display: inline-block;
+  align-items: center;
+  text-transform: uppercase;
+  color: var(--light-grayish-cyan);
+  font-size: 1.1rem;
+  font-weight: var(--bold-weight);
+}
+.card__featured--attr_new{
+  background-color: var(--desaturated-dark-cyan);
+}
+.card__featured--attr_featured{
+  background-color: var(--very-dark-grayish-cyan);
+}
+
+.card__job-name{
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+.card__job-info-list{
+  display: flex;
+  /* list-style: none; */
+  padding: 0;
+}
+.card__list-item{
+  font-size: 1.2rem;
+  color: var(--dark-grayish-cyan);
+  font-weight: var(--normal-weight);
+}
+.card__list-item:first-child::marker{
+ content: "";
+}
+.card__list-item + .card__list-item{
+  /* background-color: red; */
+  margin-left: 1.7rem;
+  /* display: inline-block;
+  content: " "; */
+}
+.card__separator{
+  background-color: var(--dark-grayish-cyan);
+  border:none;
+  height: .5px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.job-tags{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+.job-tags__item{
+  border-radius: 5px;
+  margin: 10px;
+  background-color: var(--bg-color);
+  color: var(--desaturated-dark-cyan);
+  font-size: 1.3rem;
+  font-weight: var(--bold-weight);
+  padding: 1rem;
+}
+
+
+@media screen and (min-width:975px) {
+  .card__separator{
+    display: none;
+  }
+  .card__company-thumb{
+    position: static;
+    width: 75px;
+    height: 75px;
+    margin-right: 10px;
+  }
+
+}
+

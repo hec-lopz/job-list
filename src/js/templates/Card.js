@@ -9,7 +9,7 @@ const Card = async () => {
     data-featured="${post.featured}"
     data-tags="${post.role},${post.level},${post.languages
         .map((language) => `${language}`)
-        .join()}${
+        .join()},${
         post.tools !== 0 ? post.tools.map((tool) => `${tool}`).join() : ``
       }" >
     <div class="card__body">

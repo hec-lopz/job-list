@@ -276,6 +276,7 @@ body {
   position: relative;
   cursor: pointer;
   user-select: none;
+  text-transform: capitalize;
 }
 .job-tags__item--active {
   background-color: var(--desaturated-dark-cyan);

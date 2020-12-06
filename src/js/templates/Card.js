@@ -7,7 +7,7 @@ const Card = async () => {
       (post) => `
     <div class="card" 
     data-featured="${post.featured}"
-    data-tags="${post.role},${post.level},${post.languages
+    data-tags="${post.role.toLowerCase()},${post.level.toLowerCase()},${post.languages
         .map((language) => `${language}`)
         .join()},${
         post.tools !== 0 ? post.tools.map((tool) => `${tool}`).join() : ``
@@ -40,10 +40,10 @@ const Card = async () => {
     </div>
     <hr class="card__separator">
     <ul class="card__job-tags job-tags">
-      <li data-value="${post.role}" class="card__tag-item job-tags__item ">${
+      <li data-value="${post.role.toLowerCase()}" class="card__tag-item job-tags__item ">${
         post.role
       }</li>
-      <li data-value="${post.level}" class="card__tag-item job-tags__item ">${
+      <li data-value="${post.level.toLowerCase()}" class="card__tag-item job-tags__item ">${
         post.level
       }</li>
       ${post.languages
